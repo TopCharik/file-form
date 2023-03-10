@@ -10,5 +10,6 @@ public class DocxFileFormDto
     public string Email { get; set; }
     [Required(ErrorMessage = "File is required.")]
     [AllowedExtensions(new[] { ".docx" }, ErrorMessage = "Only {0} files are allowed!!!")]
+    [DocxValidation]
     public IFormFile File { get; set; }
 }
