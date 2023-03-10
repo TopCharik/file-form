@@ -13,14 +13,14 @@ public class AllowedExtensionsAttribute : ValidationAttribute
 
     protected override ValidationResult IsValid(object value, ValidationContext validationContext)
     {
-        var file = value as IFormFile;
-        if (file == null) return new ValidationResult("File required.");
-        
+        if (value is not IFormFile file) return new ValidationResult("");
+
+
         var extension = Path.GetExtension(file.FileName);
         if (!_extensions.Contains(extension.ToLower()))
         {
-            var errorMessage = ErrorMessage != null 
-                ? string.Format(ErrorMessage, string.Join(", ", _extensions)) 
+            var errorMessage = ErrorMessage != null
+                ? string.Format(ErrorMessage, string.Join(", ", _extensions))
                 : $"Only {string.Join(", ", _extensions)} files are allowed";
             return new ValidationResult(errorMessage);
         }

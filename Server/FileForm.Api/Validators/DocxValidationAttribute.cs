@@ -7,7 +7,7 @@ public class DocxValidationAttribute : ValidationAttribute
 {
     protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
     {
-        if (value is not IFormFile file) return new ValidationResult("File required.");
+	if (value is not IFormFile file) return new ValidationResult("");
         
         try
         {
