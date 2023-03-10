@@ -11,4 +11,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FileForm.Core\FileForm.Core.csproj" />
+    <ProjectReference Include="..\FileForm.AzureBlob\FileForm.AzureBlob.csproj" />
+  </ItemGroup>
+
 </Project>
