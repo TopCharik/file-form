@@ -1,5 +1,6 @@
 using FileForm.Api.Extensions;
 using FileForm.Api.Helpers;
+using FileForm.Api.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,10 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+if (app.Environment.IsProduction())
+{
+    app.UseMiddleware<ExceptionMiddleware>();
 }
 
 app.UseHttpsRedirection();
