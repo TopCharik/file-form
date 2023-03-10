@@ -1,0 +1,33 @@
+.form-box {
+  max-width: 400px;
+  min-width: 400px;
+  margin: auto;
+  background: #fff;
+  border: black solid 4px;
+  padding: 0 3rem 3rem 3rem;
+}
+.form-header {
+  text-align: center;
+}
+
+.form-input-box {
+  margin-bottom: 1rem;
+}
+
+.submit-button {
+  margin-top: 2rem;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+}
+
+
+.errors {
+  color: red;
+}
+.error-message {
+  padding: 0.5rem 0 0 2rem;
+  margin: 0;
+}

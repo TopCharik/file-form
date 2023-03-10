@@ -25,3 +25,25 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+
+.btn-primary:hover {
+  outline: 1px solid #0099cc;
+  background-color: #00aacc;
+  color: #ffffff;
+}
+
+.btn-primary:disabled,
+.btn-primary[disabled]{
+  outline: 1px solid #000000;
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+
+.btn-success:hover {
+  outline: 1px solid #008000;
+  background-color: #31ab31;
+  color: #ffffff;
+}

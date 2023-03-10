@@ -1,0 +1,23 @@
+.success-box {
+  margin: auto;
+  background: #fff;
+  border: black solid 4px;
+  padding: 0 3rem 3rem 3rem;
+}
+
+.success-header {
+  text-align: center;
+  color: green;
+  font-size: 50px;
+}
+
+.success-text {
+  text-align: center;
+}
+
+
+@media (min-width: 600px) {
+  .form-box {
+    max-width: 400px;
+  }
+}
