@@ -1,1 +1,39 @@
-<p>docx-form works!</p>
+<!--suppress ALL -->
+<div class="form-box" [formGroup]="fileForm">
+  <h2 class="form-header">.docx form</h2>
+  <form>
+    <div class="form-input-box">
+      <label for="email">Email: </label>
+      <input type="text" name="" id="email" class="form-input" formControlName="email">
+      <div class="errors"
+           *ngIf="fileForm.controls['email'].invalid && (fileForm.controls['email'].dirty || fileForm.controls['email'].touched)"
+      >
+        <p class="error-message" *ngIf="fileForm.controls['email'].errors?.['required']">
+          Email is required.
+        </p>
+      </div>
+    </div>
+    <div class="form-input-box">
+      <label for="file">.docx file: </label>
+      <input type="file" id="file" class="form-input" formControlName="file" (change)="onFileChange($event)">
+      <div class="errors" *ngIf="!filenameValid">
+        <div class="error-message">
+          Only .docx files permitted.
+        </div>
+      </div>
+    </div>
+    <a (click)="onSubmit()" class="btn btn-primary center submit-button">Send form</a>
+  </form>
+
+  <div class="errors" *ngIf="error && error.errors">
+    <div class="error" *ngFor="let err of error.errors  | keyvalue">
+      <div class="error">
+        {{err.key}}:
+        <p class="error-message" *ngFor="let msg of err?.value">
+          &emsp;{{msg}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+

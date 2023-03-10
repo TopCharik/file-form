@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {DocxFileFormModule} from "./docx-file-form/docx-file-form.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -12,9 +13,11 @@ import {DocxFileFormModule} from "./docx-file-form/docx-file-form.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DocxFileFormModule
+    HttpClientModule,
+    DocxFileFormModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
