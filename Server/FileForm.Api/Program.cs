@@ -11,6 +11,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Client", p =>
+    {
+        p.WithOrigins(builder.Configuration["ClientUrl"])
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddBlobService(
     builder.Configuration["AzureStorageConnectionString"],
     builder.Configuration["AzureStorageContainerName"]
@@ -18,6 +28,8 @@ builder.Services.AddBlobService(
 builder.Services.AddScoped<FormMapper>();
 
 var app = builder.Build();
+
+app.UseCors("Client");
 
 if (app.Environment.IsDevelopment())
 {
